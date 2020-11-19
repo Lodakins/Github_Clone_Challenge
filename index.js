@@ -14,7 +14,7 @@ let sidebarpropic = document.querySelector('#sidebarpropic');
 
 fetch('https://api.github.com/graphql', {
   method: 'POST',
-  headers: { 'Content-Type': 'application/json',"Authorization": "bearer 7fce47980091ffcac78d2a980d908179905f844e" },
+  headers: { 'Content-Type': 'application/json',"Authorization": "bearer 10cb1a22e96c907be7831d85c24869e60629eb44" },
   body: JSON.stringify({  query: "query { viewer { login avatarUrl bio name repositories(first:20){ nodes { name description forkCount stargazerCount updatedAt languages(first:1){ nodes {name color} } } } }}"}),
 })
   .then(res => res.json())
