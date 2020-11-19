@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Github Clone Challenge </title>
+     <link rel="stylesheet" href="https://use.fontawesome.com/1580a221e5.css"> 
+     <link rel="stylesheet" href="fonts/ionicons.min.css"> 
+    <link rel="stylesheet" href="util.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+   
+   
+
+    <!-- TOP HEADER STARTS HERE -->
+
+        <header class="d-flex top-header">
+            <div class="d-lg-9 d-md-9">
+                <div class="d-flex">
+                    <div class="d-lg-1 logo-header">
+                        <!-- Github logo-->
+                        <a class="nav-link">
+                        <svg class="octicon octicon-mark-github logo" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path><style> color:#fff;</style></svg>
+                        </a>
+                        <!-- Github logo-->
+                    </div>
+                    <div class="d-lg-4 top-header-search-container">
+                        <input type="text" class="top-header-search"  placeholder="Search or jump to..." />
+                    </div>
+                    <div class="d-lg-7">
+                        <ul>
+                            <li class="nav-link"> Pull requests</li>
+                            <li class="nav-link"> Issues</li>
+                            <li class="nav-link"> Marketplace</li>
+                            <li class="nav-link"> Explore </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-lg-3 d-md-2 top-header-aside">
+                <ul class="top-header-aside-list">
+                    <li class="nav-link">
+                        <i class="fa fa-bell"></i>
+                    </li>
+                    <li class="nav-link">
+                        <div class="dropdown">
+                             <i class="fa fa-plus"></i>
+                            <div class="dropdown-content">
+                              <!-- <a href="#">Link 1</a>
+                              <a href="#">Link 2</a>
+                              <a href="#">Link 3</a> -->
+                            </div>
+                          </div>
+                    </li>
+                   
+                    <li class="nav-link">
+                        <div class="dropdown">
+                           <img  id="header-img" width="20px" height="20px" class="dropdown-body" style="border-radius: 50%;" >
+                           <div class="dropdown-content">
+                             <!-- <a href="#">Link 1</a>
+                             <a href="#">Link 2</a>
+                             <a href="#">Link 3</a> -->
+                           </div>
+                         </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
+    <!-- TOP HEADER STOPS HERE-->
+
+    <!-- SMALL TOP HEADER STARTS HERE -->
+        <header class="d-flex s-top-header d-none">
+            <div class="d-sm-12" style="margin-bottom: 10px;">
+                <div class="d-flex">
+                    <div class="d-sm-4">
+                        <span id="hamburger"><i class="icon ion-drag" style="color:rgb(88, 96, 105);font-size: 28px;"></i></span>
+                    </div>
+                    <div class="d-sm-4" style="text-align: center; ">
+                         <!-- Github logo-->
+                         <a class="nav-link">
+                            <svg class="octicon octicon-mark-github logo" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path><style> color:#fff;</style></svg>
+                            </a>
+                        <!-- Github logo-->
+                    </div>
+                    <div class="d-sm-4" style="text-align: right;">
+                        <i class="fa fa-bell" style="padding-right:20px;padding-top: 5px;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="d-sm-12 d-none" id="s-top-header-slider">
+                <div class="d-flex">
+                    <div class="d-sm-12">
+                        <input type="text" class="top-header-search"  placeholder="Search " />
+                    </div>
+                    <div class="d-sm-12 nav-links">
+                        <a class="">
+                            Dashboard
+                        </a>
+                    </div>
+                    <div class="d-sm-12 nav-links">
+                        <a class="">
+                            Pull Request
+                        </a>
+                    </div>
+                    <div class="d-sm-12 nav-links">
+                        <a class="">
+                            Issues
+                        </a>
+                    </div>
+                    <div class="d-sm-12 nav-links">
+                        <a class="">
+                            Market Place
+                        </a>
+                    </div>
+                    <div class="d-sm-12 nav-links">
+                        <a class="">
+                            Explore
+                        </a>
+                    </div>
+                    <div class="d-sm-12 nav-links">
+                        <a class=""></a>
+                           <img src="" class=" " id="sidebarpropic" width="20px" height="20px" style="border-radius: 2em;"/><span id="profile-id"></span>
+                        </a>
+                    </div>
+                    <div class="d-sm-12 nav-links">
+                        <a class="">
+                             <i class="icon ion-log-out" style="color:rgb(88, 96, 105);font-size: 18px;"></i> Sign Out 
+                        </a>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <!-- SMALL TOP HEADER STOPS HERE -->
+    <!-- PROFILE SMALL DEVICES TAB STARTS HERE -->
+        <section class="profile-small-tab d-flex mt-sm-2">
+            <div class="d-sm-4">
+                <img  class="img-fluid" width="60px" height="60px" style="border-radius: 2em;"  id="profile-pics-small"/>
+            </div>
+            <div class="d-sm-8">
+                <h2 id="sfullname" class="fullname"> </h2>
+                <h5 id="slogin" class="login"></h5>
+            </div>
+            <div class="d-sm-12" style="padding: 20px;">
+                <input type="text" class="repo-search" placeholder="Set status">
+            </div>
+            <div class="d-sm-12">
+                <p id="sprofile-bio"> </p>
+            </div>
+        </section>
+     <!-- PROFILE SMALL DEVICES TAB STOPS HERE -->
+    <!-- NAVIGATION TAB STARTS HERE-->
+        <section class="navigation-section d-flex"> 
+            <div class="d-lg-4 d-md-2">
+            </div>
+            <div class="d-lg-8 d-md-10 d-sm-12 mt-sm-2">
+                <ul class="nav-tabs d-flex">
+                    <li class="tab-link d-sm-3"><i class="icon ion-ios-book"></i>
+                         Overview  </li>
+                    <li class="tab-link active d-sm-3"><i class="fa fa-book"></i> Repositories <span class="no"> 20</span></li>
+                    <li class="tab-link d-sm-3"><i class="fa fa-file-alt"></i> Projects </li>
+                    <li class="tab-link d-sm-3"><i class="fa fa-cube"></i> Packages </li>
+                </ul>
+            </div>
+        </section>
+    <!-- NAVIGATION TAB ENDS HERE-->
+
+        <!-- MAIN SECTION-->
+        <main class="d-flex">
+            <!-- PROFILE-->
+                 <div class="d-lg-4 d-md-3 d-sm-12 profile-lg-container">
+                    <div class="d-flex profile">
+                       <div class="d-lg-12  profile-container">
+                           <div class="">
+                                <img  class="img-fluid profile-pics"  id="profile-pics"/>
+                           </div>
+                           <div class="status-smiley shadow">
+                                <div class="inner-container">
+                                    <i class="icon ion-android-happy" style="color:rgb(88, 96, 105);font-size: 18px;"></i> <span style="font-size: 13px;" class="profile-status shadow">Set status</span> 
+                                </div>                              
+                           </div>
+                        </div>
+                        <div class="d-lg-12">
+                            <h2 id="fullname" class="fullname"> </h2>
+                            <h5 id="login" class="login"></h5>
+                        </div>
+                        <div class="d-lg-12">
+                            <p id="profile-bio"></p>
+                        </div> 
+                    </div> 
+                </div> 
+            <!-- PROFILE ENDS HERE-->
+
+            <!-- REPOSITORIES-->
+                <div class="d-lg-8 d-md-8 d-sm-12">
+                   <div class="d-flex">
+                       <div class="d-lg-11 repo-container">
+                        <input type="text" class="repo-search"  placeholder="Find a repository..." />
+                       </div>
+                       <div class="d-lg-11 repo-count">
+                           <p> <strong>20</strong> result for <strong>public</strong> repositories</p>
+                       </div>
+                       <div class="d-lg-11" id="repo-listing">
+                            <!-- <div class="d-flex repo-card">
+                                <div class="d-lg-9">
+                                    <div class="d-flex">
+                                        <div class="d-lg-12">
+                                            <h2 class="reponame"> Nerdy Forum </h2>
+                                            <p class="m-t-10 repo-desc"> This is just a test description </p>
+                                        </div>
+                                        <div class="d-lg-2 m-t-10">
+                                           <p class="repo-details"><span class="language-color" style="color:red"></span> HTML </p>
+                                        </div> 
+                                        <div class="d-lg-2 m-t-10">
+                                            <p class="repo-details"> <i class="fa fa-star"></i> </p>
+                                        </div>
+                                        <div class="d-lg-2 m-t-10">
+                                            <p class="repo-details"> <i class="fa fa-code-branch"></i> </p>
+                                        </div>
+                                        <div class="d-lg-2 m-t-10">
+                                            <p class="repo-details"> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-lg-3" style="text-align: right;">
+                                    <button class="repo-star-btn"><i class="fa fa-star"></i>Star</button>
+                                </div>
+                            </div> -->
+                       </div>
+                   </div>     
+                </div>
+            <!-- REPOSITORIES-->
+
+        </main>
+        <!-- END OF MAIN SECTION-->
+
+<script src="index.js"></script>
+</body>
+</html>
