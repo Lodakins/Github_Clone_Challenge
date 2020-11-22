@@ -368,6 +368,24 @@
 .d-none{
     display: none;
 }
+.profile-pics1{
+  object-fit: contain;
+  align-self: center;
+  margin-right: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+}
+#proid{
+  align-self: center;
+}
+.fixed{
+    background: #fff;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
 .d-flex{
     display: -ms-flexbox;
     display: flex;

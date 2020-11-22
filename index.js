@@ -4,27 +4,29 @@ let fullname = document.querySelector("#fullname");
 let sfullname = document.querySelector("#sfullname");
 let bio = document.querySelector("#profile-bio");
 let login = document.querySelector('#login');
-let slogin = document.querySelector('#slogin'); //sprofile-bio
+let slogin = document.querySelector('#slogin'); //sprofile-bio 
 let sprofilebio = document.querySelector('#sprofile-bio');
 let profileSmall = document.querySelector('#profile-pics-small');
 let profileid = document.querySelector('#profile-id');
 let sidebarpropic = document.querySelector('#sidebarpropic');
+let profilepics1 = document.querySelector('#profile-pics1'); 
+let proid = document.querySelector('#proid');
 
 
 
 fetch('https://api.github.com/graphql', {
   method: 'POST',
-  headers: { 'Content-Type': 'application/json',"Authorization": "bearer 10cb1a22e96c907be7831d85c24869e60629eb44" },
+  headers: { 'Content-Type': 'application/json',"Authorization": "bearer aae11ff7eae9db0ed29dc07a04e00d95a5210db9" },
   body: JSON.stringify({  query: "query { viewer { login avatarUrl bio name repositories(first:20){ nodes { name description forkCount stargazerCount updatedAt languages(first:1){ nodes {name color} } } } }}"}),
 })
   .then(res => res.json())
   .then(res => {
-      console.log(res.data)
       let response = res.data;
       topHeaderImage.setAttribute("src",response.viewer.avatarUrl);
       profilePics.setAttribute("src",response.viewer.avatarUrl);
       profileSmall.setAttribute("src",response.viewer.avatarUrl);
       sidebarpropic.setAttribute("src",response.viewer.avatarUrl);
+      profilepics1.setAttribute("src",response.viewer.avatarUrl)
       fullname.textContent=response.viewer.name;
       sfullname.textContent=response.viewer.name;
       bio.textContent= response.viewer.bio;
@@ -32,6 +34,7 @@ fetch('https://api.github.com/graphql', {
       login.textContent= response.viewer.login;
       slogin.textContent= response.viewer.login;
       profileid.textContent= response.viewer.login;
+      proid.textContent= response.viewer.login;
       displayRepodata(response.viewer.repositories.nodes);
     }).catch((err) => {
       console.log(err);
@@ -45,6 +48,19 @@ fetch('https://api.github.com/graphql', {
       e.preventDefault();
     slider.classList.toggle("d-none");
   })
+
+
+window.addEventListener("scroll",function(e){
+
+      if(this.scrollY > 100){
+        document.querySelector("#navigation-section").classList.add("fixed");
+        document.querySelector('#nav-prof').classList.remove("d-none1");
+      }else{
+        document.querySelector("#navigation-section").classList.remove("fixed");
+        document.querySelector('#nav-prof').classList.add("d-none1");
+      }
+     
+});
 
 //   description: "30 Day Vanilla JS Challenge"
 //   forkCount: 0
