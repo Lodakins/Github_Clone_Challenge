@@ -16,7 +16,7 @@ let proid = document.querySelector('#proid');
 
 fetch('https://api.github.com/graphql', {
   method: 'POST',
-  headers: { 'Content-Type': 'application/json',"Authorization": "bearer aae11ff7eae9db0ed29dc07a04e00d95a5210db9" },
+  headers: { 'Content-Type': 'application/json',"Authorization": "bearer  911e842438bee6d20fa10e915c378fa016c99459" },
   body: JSON.stringify({  query: "query { viewer { login avatarUrl bio name repositories(first:20){ nodes { name description forkCount stargazerCount updatedAt languages(first:1){ nodes {name color} } } } }}"}),
 })
   .then(res => res.json())
