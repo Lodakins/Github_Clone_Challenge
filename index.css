@@ -130,9 +130,39 @@ p{
     background: #efefef;
     border-radius: 50%;
 }
+.top-header-aside-list .nav-link.notification{
+    position: relative;
+}
+.top-header-aside-list .nav-link.notification .status{
+        position: absolute;
+        top: -6px;
+        left: 6px;
+        z-index: 2;
+        width: 9px;
+        height: 9px;
+        background-image: linear-gradient(#54a3ff,#006eed);
+        background-clip: padding-box;
+        border: 2px solid var(--color-header-bg);
+        border-radius: 50%;
+}
 .nav-tabs .tab-link.active{
     border-bottom:2px solid #f9826c;
     color:var(--primary-bg-color);
+}
+.s-top-header .notify{
+    position: relative;
+} 
+.s-top-header .notify .status{
+        position: absolute;
+        top: 0px;
+        right: 15px;
+        z-index: 2;
+        width: 9px;
+        height: 9px;
+        background-image: linear-gradient(#54a3ff,#006eed);
+        background-clip: padding-box;
+        border: 2px solid var(--color-header-bg);
+        border-radius: 50%; 
 }
 /*#d1d5da;*/
 
@@ -154,26 +184,42 @@ p{
     padding-left: 40px;
 }
 .status-smiley{
-    position: absolute;
-    right: 5px;
-    bottom: 3px;
-    width: 25px;
-    height: 25px;
+    cursor: pointer;
+    position: relative;
+    left: 53%;
+    bottom: 75px;
+    width: 35px;
+    height: 35px;
     border-radius: 2em; 
     overflow:hidden;
+    border: 1px solid rgba(20, 20, 20, .2);
+    background: #fff;
 }
+.profile-status{
+    display: none;
+ } 
 .status-smiley:hover{
-    width: 120px;
+    width: 100px;
+    color:blue;
 }
+.status-smiley:hover .profile-status{
+    display: block;
+    color:blue;
+} 
+/* .status-smiley:hover .ion-android-happy{
+    color:blue;
+} */
 /* .ion-android-happy{
     justify-content: center;
     padding: 10px;
+}*/
+
+.inner-container{
+    display: flex;
+    /* justify-content: center; */
+    padding-top: 3px;
+    margin-left:9px;
 }
-.profile-status{
-    padding: 10px;
-    border-top-right-radius: 20%;
-    border-bottom-right-radius: 20%;
-} */
 .fullname{
     color:#24292e;
 }
@@ -379,13 +425,42 @@ p{
         width: 100%;
         border: 1px solid var(--primary-bg-color);
     }
-    .top-header{
+    .top-header,.sidebarnav{
         display: none;
     }
   }
 
+
+@media only screen and (max-width: 829px) and (min-width: 770px)  {
+
+    .d-ms-2{
+        flex: 0 0 20%;
+        box-sizing: border-box;
+    }
+
+    .d-ms-3{
+       flex: 0 0 28.33333333333%;
+       box-sizing: border-box;
+    }
+
+    .d-ms-8{
+        flex: 0 0 59.666666666666%;
+        box-sizing: border-box;
+     }
+     .ml-ms-1{
+        margin-left: 9px;
+     }
+     .status-smiley{
+         left: 80%;
+     }
+    .d-ms-10 {
+        flex: 0 0 79.3333333333%;
+        box-sizing: border-box;
+    }
+
+  }
 /*================================
-    MEDIA QUERY FOR SMALL DEVICES
+    MEDIA QUERY FOR MEDIUM DEVICES
 =====================================*/
 @media only screen and (max-width: 768px) and (min-width: 481px)  {
     .d-md-1{
@@ -429,7 +504,7 @@ p{
     #repo-listing{
         flex: 0 0 100%;
     }
-    .s-top-header,.profile-small-tab{
+    .s-top-header,.profile-small-tab,.sidebarnav{
         display: none;
     }
     .profile-container{
@@ -439,7 +514,9 @@ p{
         width: 150px;
         height: 150px;
     }
-
+    .status-smiley{
+        left: 65%;
+    }
   }
   /*================================
     MEDIA QUERY FOR LARGE DEVICES

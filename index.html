@@ -42,8 +42,9 @@
             </div>
             <div class="d-lg-3 d-md-2 top-header-aside">
                 <ul class="top-header-aside-list">
-                    <li class="nav-link">
+                    <li class="nav-link notification">
                         <i class="fa fa-bell"></i>
+                        <div class="status"></div>
                     </li>
                     <li class="nav-link">
                         <div class="dropdown">
@@ -85,8 +86,9 @@
                             </a>
                         <!-- Github logo-->
                     </div>
-                    <div class="d-sm-4" style="text-align: right;">
+                    <div class="d-sm-4 notify" style="text-align: right;">
                         <i class="fa fa-bell" style="padding-right:20px;padding-top: 5px;"></i>
+                        <div class="status"></div>
                     </div>
                 </div>
             </div>
@@ -154,13 +156,13 @@
      <!-- PROFILE SMALL DEVICES TAB STOPS HERE -->
     <!-- NAVIGATION TAB STARTS HERE-->
         <section class="navigation-section d-flex" id="navigation-section"> 
-            <div class="d-lg-4 d-md-2 d-flex " style="justify-content: center;" >
+            <div class="d-lg-4 d-md-2 d-ms-2 d-flex sidebarnav" style="justify-content: center;" >
                 <div class="d-none1 d-flex" id="nav-prof">
                     <img  class="profile-pics1"  id="profile-pics1" width="30px" height="30px" style="border-radius: 2em;"/> <span id="proid"> </span>
                 </div>
                 
             </div>
-            <div class="d-lg-8 d-md-10 d-sm-12 mt-sm-2">
+            <div class="d-lg-8 d-md-10  d-ms-10 d-sm-12 mt-sm-2">
                 <ul class="nav-tabs d-flex">
                     <li class="tab-link d-sm-3"><i class="icon ion-ios-book"></i>
                          Overview  </li>
@@ -175,16 +177,16 @@
         <!-- MAIN SECTION-->
         <main class="d-flex">
             <!-- PROFILE-->
-                 <div class="d-lg-4 d-md-3 d-sm-12 profile-lg-container">
+                 <div class="d-lg-4 d-md-3 d-ms-3 d-sm-12 profile-lg-container">
                     <div class="d-flex profile">
                        <div class="d-lg-12  profile-container">
                            <div class="">
                                 <img  class="img-fluid profile-pics"  id="profile-pics"/>
                            </div>
                            <div class="status-smiley shadow">
-                                <div class="inner-container">
-                                    <i class="icon ion-android-happy" style="color:rgb(88, 96, 105);font-size: 18px;"></i> <span style="font-size: 13px;" class="profile-status shadow">Set status</span> 
-                                </div>                              
+                                   <div class="inner-container">
+                                     <i class="icon ion-android-happy" style="color:rgb(88, 96, 105);font-size: 22px;margin-right: 5px;"></i> <span style="font-size: 13px;margin-top:5px;margin-left: 2px;" class="profile-status">Set status</span> 
+                                   </div>                              
                            </div>
                         </div>
                         <div class="d-lg-12">
@@ -199,7 +201,7 @@
             <!-- PROFILE ENDS HERE-->
 
             <!-- REPOSITORIES-->
-                <div class="d-lg-8 d-md-8 d-sm-12">
+                <div class="d-lg-8 d-md-8 d-ms-8 d-sm-12 ml-ms-1">
                    <div class="d-flex">
                        <div class="d-lg-11 repo-container">
                         <input type="text" class="repo-search"  placeholder="Find a repository..." />
