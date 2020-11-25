@@ -10,20 +10,25 @@ let profileSmall = document.querySelector('#profile-pics-small');
 let profileid = document.querySelector('#profile-id');
 let sidebarpropic = document.querySelector('#sidebarpropic');
 let profilepics1 = document.querySelector('#profile-pics1'); 
-let proid = document.querySelector('#proid');
+let proid = document.querySelector('#proid'); //followStar
+let followStar = document.querySelector('#followStar');
+let followers = document.querySelector('#followers'); //
+let following = document.querySelector('#following');
 
 
+let url="";
+let token="";
 
-
-
-fetch('https://api.github.com/graphql', {
+fetch(url, {
   method: 'POST',
-  headers: { 'Content-Type': 'application/json',"Authorization": "bearer" },
-  body: JSON.stringify({  query: "query { viewer { login avatarUrl bio name repositories(first:20){ nodes { name description forkCount stargazerCount updatedAt languages(first:1){ nodes {name color} } } } }}"}),
+  headers: { 'Content-Type': 'application/json',"Authorization": "bearer " + token },
+  body: JSON.stringify({  query: "query { viewer { login avatarUrl bio name following{totalCount} followers{totalCount} starredRepositories{totalCount}  repositories(first:20){ nodes { name description forkCount url stargazerCount updatedAt isFork parent{name url forkCount owner{login}} languages(first:1){ nodes {name color} } } } }}"}),
 })
   .then(res => res.json())
   .then(res => {
+
       let response = res.data;
+      console.log(response);
       topHeaderImage.setAttribute("src",response.viewer.avatarUrl);
       profilePics.setAttribute("src",response.viewer.avatarUrl);
       profileSmall.setAttribute("src",response.viewer.avatarUrl);
@@ -37,6 +42,9 @@ fetch('https://api.github.com/graphql', {
       slogin.textContent= response.viewer.login;
       profileid.textContent= response.viewer.login;
       proid.textContent= response.viewer.login;
+      followers.textContent= response.viewer.followers.totalCount;
+      following.textContent= response.viewer.following.totalCount; //starredRepositories
+      followStar.textContent= response.viewer.starredRepositories.totalCount;
       displayRepodata(response.viewer.repositories.nodes);
     }).catch((err) => {
       console.log(err);
@@ -84,7 +92,12 @@ window.addEventListener("scroll",function(e){
            html+=`
            <div class="d-flex repo-card">
             <div class="d-lg-12 mb-sm-1">
-              <h2 class="reponame">${item.name} </h2>
+              <h2 class="reponame"><a href="${item.url}" target="_blank">${item.name} </a></h2>
+            </div>
+            <div class="d-lg-12">
+              ${item.isFork ? `<span class="fork">Forked from 
+              <a href="${item.parent.url}" class="muted-link">${item.parent.owner.login + '/'+item.parent.name}</a>
+            </span>`:""}
             </div>
            <div class="d-lg-9">
                <div class="d-flex">
@@ -99,8 +112,8 @@ window.addEventListener("scroll",function(e){
                    <div class="d-sm-2 d-lg-2 m-t-10">
                        <p class="repo-details"> <i class="fa fa-star"></i>${item.stargazerCount}</p>
                    </div>
-                   <div class="d-sm-2 d-lg-2 m-t-10">
-                       <p class="repo-details"> <i class="fa fa-code-branch"></i>${item.forkCount}</p>
+                   <div class="d-sm-3 d-lg-2 m-t-10">
+                       <p class="repo-details"> <i class="fa fa-code-branch"></i>${item.isFork ? item.parent.forkCount :item.forkCount}</p>
                    </div>
                    <div class="d-sm-4 d-lg-3 m-t-10">
                        <p class="repo-details">Updated on ${modifyDate(item.updatedAt)}</p>
@@ -108,7 +121,7 @@ window.addEventListener("scroll",function(e){
                </div>
            </div>
            <div class="d-lg-3" style="text-align: right;">
-               <button class="repo-star-btn"><i class="fa fa-star"></i>Star</button>
+               <button class="repo-star-btn"><svg class="octicon octicon-star" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>Star</button>
            </div>
         </div>
           `;
