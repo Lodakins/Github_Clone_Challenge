@@ -16,7 +16,7 @@ let followers = document.querySelector('#followers'); //
 let following = document.querySelector('#following');
 
 
-let url="";
+let url="https://api.github.com/graphql";
 let token="";
 
 fetch(url, {

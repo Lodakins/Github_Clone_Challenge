@@ -481,7 +481,6 @@ ul li{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-  /*"https://api.github.com/graphql";89e77f8e71001f83f6afb8eebeda4598639be87d*/
   /* Links inside the dropdown */
   .dropdown-content a {
     color: black;
